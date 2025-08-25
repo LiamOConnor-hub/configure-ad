@@ -32,7 +32,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/CX69EmX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Deploy a Virtual Network and VMs in Azure
@@ -41,16 +41,16 @@ First, log in to the Azure Portal and create a new Virtual Network (VNet) to hos
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/s3pK837.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Install and Configure Active Directory on DC-1
-Log in to DC-1 and install the Active Directory Domain Services (AD DS) role using Server Manager. Promote DC-1 to a Domain Controller and create a new forest, specifying a domain name (for example, mylab.local). After the promotion, restart DC-1 and log in using a domain account, such as mylab\labuser. This sets up the foundation for your domain environment.
+Log in to DC-1 and install the Active Directory Domain Services (AD DS) role using Server Manager. Promote DC-1 to a Domain Controller and create a new forest, specifying a domain name (for example, mydomain.com). After the promotion, restart DC-1 and log in using a domain account, such as mydomain.com\labuser. This sets up the foundation for your domain environment.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/5aROjKA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Create Domain Admins and Join Client VM
