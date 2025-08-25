@@ -24,10 +24,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Install Active Directory
+- Create a Domain Admin user within the domain
+- Join "Client-1" to your domain
+- Setup Remote Desktop for non-administrative users on "Client-1"
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -35,7 +35,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Deploy a Virtual Network and VMs in Azure
+First, log in to the Azure Portal and create a new Virtual Network (VNet) to host your lab environment. Then, deploy two Windows Server virtual machines: one will act as your Domain Controller (DC-1) and the other as a client workstation (Client-1). Assign static private IP addresses within the VNet, and make sure both VMs can communicate with each other.
 </p>
 <br />
 
@@ -43,7 +44,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Install and Configure Active Directory on DC-1
+Log in to DC-1 and install the Active Directory Domain Services (AD DS) role using Server Manager. Promote DC-1 to a Domain Controller and create a new forest, specifying a domain name (for example, mylab.local). After the promotion, restart DC-1 and log in using a domain account, such as mylab\labuser. This sets up the foundation for your domain environment.
 </p>
 <br />
 
@@ -51,6 +53,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Create Domain Admins and Join Client VM
+Using Active Directory Users and Computers (ADUC), create OUs such as “_EMPLOYEES” and “_ADMINS.” Add a new user for administrative tasks (e.g., jane_admin) and assign them to the Domain Admins group. Then, log in to Client-1 as a local administrator and join it to the domain. Verify in ADUC that Client-1 appears in the correct OU (for example, “_CLIENTS”). Optionally, configure Remote Desktop for domain users so non-admin accounts can log in to the client machine.
 </p>
 <br />
